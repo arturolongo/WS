@@ -25,7 +25,7 @@ const io: Server = new Server(server, {
 io.on('connection', socket => {
   socket.on('agenda', agenda => {
     console.log('payment success and sended to client: ', agenda);
-    io.emit('payment-processed', agenda);
+    io.emit('agenda', agenda);
   });
 
   socket.on("connect_error", (error) => {
